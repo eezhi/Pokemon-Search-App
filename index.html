@@ -1,0 +1,57 @@
+<!Doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <h1 id="title">Pokémon Search App</h1>
+    <div id="container">
+        <form>
+            <label id="label" for="search-input">Search for Pokémon Name or ID:</label>
+            <input id="search-input" type="text" required />
+            <button type="button" id="search-button">Search</button>
+        </form>
+        <div>
+            <div>
+                <div id="pokimon-text-info">
+                    <h2 id="pokemon-name"></h2>
+                    <p id="pokemon-id"></p>
+                    <p id="weight"></p>
+                    <p id="height"></p>
+                    <img id="sprite" />
+                    <div id="types"></div>
+                </div>
+            </div>
+            <table id="stats-table">
+                <tr>
+                    <td>HP:</td>
+                    <td id="hp"></td>
+                </tr>
+                <tr>
+                    <td>Attack:</td>
+                    <td id="attack"></td>
+                </tr>
+                <tr>
+                    <td>Defense:</td>
+                    <td id="defense"></td>
+                </tr>
+                <tr>
+                    <td>Sp. Attack:</td>
+                    <td id="special-attack"></td>
+                </tr>
+                <tr>
+                    <td>Sp. Defense:</td>
+                    <td id="special-defense"></td>
+                </tr>
+                <tr>
+                    <td>Speed:</td>
+                    <td id="speed"></td>
+                </tr>
+            </table>
+            </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
