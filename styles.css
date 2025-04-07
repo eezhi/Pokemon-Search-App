@@ -5,18 +5,27 @@
     font-family: 'Poppings', sans-serif;
 }
 
+
+:root {
+    --background-color: #a28089;
+    --body-color: #fff;
+    --text-color: #e5eaf5;
+    --attributes: #8458B3;
+    --mid-purple: #d0bdf4;
+    --types: #a0d2eb;
+
+}
 body{
     display: flex;
     flex-direction: column;
-    background-color: #EEEEEE;
-    color: #333;
-    height: 100vh;
-    width: 50vw;
-    margin: auto;
+    background-color: var(--mid-purple);;
+    color: var(--text-color);;
+    align-items: center;
     padding: 10px;
 }
 
 #title{
+    color: var(--text-color);
     text-align: center;
     margin-bottom: 20px;
     margin-top: 20px;
@@ -25,8 +34,8 @@ body{
 #container{
     display: flex;
     flex-direction: column;
-    height: 100%;
-    width: 40vw;
+    height: auto;
+    width: 25vw;
     padding: 20px;
     background-color: #393E46;
     color: white;
@@ -46,48 +55,81 @@ form{
 #label{
     grid-area: label;
     text-align: center;
-    font-size: 14px;
+    font-size: 16px;
+    padding-bottom: 10px;
     margin-bottom: 2px;
 }
 
 #search-input{
-    grid-area: input;;
+    grid-area: input;
     padding: 10px;
     border: 1px solid #ccc;
-    width: 100%;
+    height: 40px;
+    width: 90%;
     border-style: none;
 }
 #search-button{
     grid-area: button;
     border-radius: 15px;
     border-style: none;
+    height: 40px;
+    width: 100px;
+    align-self: right;
+
+}
+#search-button:hover{
+    background-color: var(--attributes);
+    font-weight: bold;;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-#pokimon-text-info {
+#pokemon-text-info {
+    display: grid;
+    grid-template-rows:0.5fr 0.5fr 2fr 1fr; ;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "pokemon-name pokemon-id"
+    "height pweight"
+    "sprite sprite"
+    "types types";
     background-color: #5A6072;
-    width: 100%;
-    height: auto; /* Changed to auto to allow content to dictate height */
+    color: var(--types);
+    width: auto;
+    height: auto;
     margin-top: 15px;
     padding: 20px;
-    display: flex; /* Added flexbox to control layout */
-    flex-wrap: wrap; /* Allows items to wrap onto new lines */
-    align-items: flex-start; /* Aligns items to the start of the cross axis */
+    gap: 5px;
+
+
+}
+#pokemon-id{
+    grid-area: pokemon-id;
+    text-align: left;
+    align-self: center;
 }
 
+#weight{
+    grid-area: pweight;
+    text-align: left;
+    margin-left: -50px;
+}
+
+#height{
+    grid-area: height;
+}
 #sprite{
-    display: flex;
-    width: 50%; /* Adjusted width to fit within #pokimon-text-info */
+    grid-area: sprite;
+    width: auto;
     height: auto;
-    margin-bottom: 10px;
-    justify-content: center;
-    align-items: center;
+    align-self: center;
+    justify-self: center;
 }
 
 #types{
-    position: relative;
-    bottom: 10px;
+    grid-area: types;
     width: auto; /* Adjusted width to fit within #pokimon-text-info */
-    background-color: #00ADB5;
     padding: 5px;
     border-radius: 10px;
     box-sizing: border-box; /* Added to include padding/border in width */
@@ -101,36 +143,13 @@ form{
 }
 
 #stats-table td {
+    background-color: #5A6072;
     padding: 8px;
-    border-bottom: 1px solid #5A6072;
-}
+    border: 5px solid #393E46;
+    gap: 5px;
 
-/* Commented out old stats grid */
-/* .stats{
-    display: grid;
-    grid-template-rows: repeat(6,1fr);
-    grid-template-columns: 2fr 1fr;;
-    grid-template-areas: 
-    "hp attack"
-    "defense special-attack"
-    "special-defense speed";
-}
 
-#hp{
-    grid-area: hp;
 }
-#attack{
-    grid-area: attack;
-}   
-#defense{
-    grid-area: defense;
+.cell-stats {
+    text-align: center;
 }
-#special-attack{
-    grid-area: special-attack;
-}
-#special-defense{
-    grid-area: special-defense;
-}
-#speed{
-    grid-area: speed;
-} */
